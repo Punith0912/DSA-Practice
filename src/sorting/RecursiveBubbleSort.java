@@ -14,9 +14,8 @@ public class RecursiveBubbleSort {
 	}
 
 	private static void bubbleSort(int[] arr, int length) {
-		System.out.println("num");
 		
-		if(length==0) return;
+		if(length==1) return;
 		
 		int flag = 0;
 		for(int i=0;i<length-1;i++) {
