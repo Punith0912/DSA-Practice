@@ -16,27 +16,58 @@ public class MoveZero {
 		}
 	}
 
+	
 	private static void moveZero(int[] arr) {
 		
-		List<Integer> list = new ArrayList<Integer>();
+		// brute force
 		
-		for(int i = 0 ;i< arr.length ; i++) {
+//		List<Integer> list = new ArrayList<Integer>();
+//		
+//		for(int i = 0 ;i< arr.length ; i++) {
+//			
+//			if(arr[i] != 0)
+//				list.add(arr[i]);
+//		}
+//		
+//		System.out.println(list.size());
+//		
+//		// copying elements from list
+//		for(int i =0 ; i<list.size();i++) {
+//			arr[i]=list.get(i);
+//		}
+//		
+//		// adding zero to the last
+//		
+//		for(int i =list.size();i<arr.length;i++) {
+//			arr[i] = 0;
+//		}
+
+	
+	
+	// optimal
+	
+		int j=-1;
+		
+		//finding first zeroth index
+		
+		for(int i =0;i< arr.length;i++) {
+			if(arr[i] == 0) {
+				j=i;
+				break;
+			}
+		}
+		
+	for(int i = j+1;i< arr.length;i++ ) {
+		
+		if(arr[i] != 0) {
 			
-			if(arr[i] != 0)
-				list.add(arr[i]);
-		}
-		
-		System.out.println(list.size());
-		
-		// copying elements from list
-		for(int i =0 ; i<list.size();i++) {
-			arr[i]=list.get(i);
-		}
-		
-		// adding zero to the last
-		
-		for(int i =list.size();i<arr.length;i++) {
+			//swaping
+			arr[j] = arr[i];
 			arr[i] = 0;
+			j++;
 		}
 	}
+		
+}
+	
 }
